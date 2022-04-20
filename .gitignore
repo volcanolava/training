@@ -1,3 +1,8 @@
 .vscode
 linux_warmup/.idea
 *.o
+linux_warmup/.idea/linux_warmup.iml
+linux_warmup/.idea/misc.xml
+linux_warmup/.idea/modules.xml
+week1/ex1
+week1/ex2

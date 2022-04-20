@@ -1,3 +1,0 @@
-a/b=
-I would add a to itself until it reaches almost b (can be done easily with conditions). I'd count this additions to get the quotient.
-The delta between the a added to itself and b is the remainder (can be implemented with sub).
