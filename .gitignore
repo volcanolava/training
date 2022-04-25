@@ -5,3 +5,10 @@ linux_warmup/.idea/linux_warmup.iml
 linux_warmup/.idea/misc.xml
 linux_warmup/.idea/modules.xml
 instructions.txt
+.idea/
+.idea/inspectionProfiles
+.idea/training.iml
+.idea/vcs.xml
+.idea/workspace.xml
+.idea/misc.xml
+./modules.xml

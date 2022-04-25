@@ -1,0 +1,4 @@
+Troll password:
+troll0: "Please let me pass"
+troll1 (troll1_decryptor.py): "Surprise! I am the correct one" (xor key 1: "This is not the real password?", xor key 2: 0x55)
+troll2 (troll2_decryptor.py)_correct_p: Seriously, just let me pass already
