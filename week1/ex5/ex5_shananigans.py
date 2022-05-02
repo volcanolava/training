@@ -1,10 +1,8 @@
-# Brute force
 from itertools import product
 from subprocess import check_output
 
-POSSIBLE_CHARS = ["n", "s", "w", "e"]
-KEY = "##############     #     ## ### # ### ##   # # #$# #### # # # # ##   #   # # ## ####### # ##  #      # ### # ###### ##  #  #  @# ## ### # ### ##     #     ##############"
-PASSWORD_DEFS = {"n": -13, "s": 13, "w": -1, "e": 1}
+PASSWORD_DEFS = {"n": -13, "s": 13, "w": -1, "e": 1}  # north, south, west, east. a line is 13 chars and this is a map
+MAP = "##############     #     ## ### # ### ##   # # #$# #### # # # # ##   #   # # ## ####### # ##  #      # ### # ###### ##  #  #  @# ## ### # ### ##     #     ##############"
 
 MAX_LENGTH = 0x169
 
@@ -22,15 +20,16 @@ OUT_OF_BOUND_CODE = 2222
 
 
 def check_password(possible_password):
+    # Add that to identical e.g: sn, we, ew etc are false
     key_ind = AT_SIGN_POS
     for _letter in possible_password:
-        if key_ind < 0 or key_ind > len(KEY):
+        if key_ind < 0 or key_ind > len(MAP):
             return OUT_OF_BOUND_CODE
 
         key_ind += PASSWORD_DEFS[_letter]
-        if KEY[key_ind] == DOLLAR_SIGN:
+        if MAP[key_ind] == DOLLAR_SIGN:
             return DOLLAR_SIGN_CODE
-        if KEY[key_ind] == HASHTAG:
+        if MAP[key_ind] == HASHTAG:
             return HASHTAG_CODE
 
     return NO_RESULT_CODE
@@ -40,8 +39,8 @@ def main():
     rotten_combos = []
 
     for i in range(1, MAX_LENGTH):
-        permutations = product(POSSIBLE_CHARS, repeat=i)
-        for permutation in permutations:
+        print(f"Moved to {i}")
+        for permutation in product(PASSWORD_DEFS.keys(), repeat=i):
             password = ''.join(permutation)
 
             if any(password.startswith(rotten_combo) for rotten_combo in rotten_combos):
