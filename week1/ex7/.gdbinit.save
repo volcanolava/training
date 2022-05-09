@@ -1,0 +1,11 @@
+file ./bridgeofdeath
+break *file exe
+break *0x400710
+set disassembly-flavor intel
+layout asm
+layout regs
+run argument1 argument2
+set disassembly-flavor intel
+layout asm
+layout regs
+run argument1 argument2

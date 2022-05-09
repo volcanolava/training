@@ -1,0 +1,8 @@
+file ./bridgeofdeath
+run
+break *0x5555554007aa
+set disassembly-flavor intel
+layout asm
+layout regs
+
+
